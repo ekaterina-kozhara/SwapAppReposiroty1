@@ -6,7 +6,7 @@
           <div class="Q_LShevron"></div>
           <div class="A_CategoryList">
             <% @services.each do |service| %>
-            <%= link_to service.category.name, category_path(service.category) %>
+              <%= link_to service.category.name, category_path(service.category) %>
             <% end %>
           </div>
           <div class="Q_RShevron"></div>

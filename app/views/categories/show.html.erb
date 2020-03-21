@@ -1,16 +1,23 @@
-<p id="notice"><%= notice %></p>
+<div class="P_AllServices">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
+  <h1 class="A_H1"><%= @category.name %></h1>
+
+<div class="O_AllServicesOfUser">
+  <% @category.services.each do |service| %>
+    <div class="M_ServiceCard">
+      <div class="">
+        <h2 class="A_H2">
+          <%= link_to service.name, service_path(service) %>
+        </h2>
+      </div>
+      <div class="">
+        <%= image_tag(service.image, style:'width:270px; height:142px; border-radius: 4px; margin-top: 15px;') %>
+      </div>
+</div>
+  <% end %>
+</div>
 
 
-<p><strong>Services:</strong></p>
-<% @category.services.each do |service| %>
-  <p><%= link_to service.name, service_path(service) %></p>
-<% end %>
-
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+  <%= link_to 'Edit', edit_category_path(@category) %> |
+  <%= link_to 'Back', categories_path %>
