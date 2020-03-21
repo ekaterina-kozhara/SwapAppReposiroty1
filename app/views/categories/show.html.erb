@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @category.name %>
+</p>
+
+
+<p><strong>Services:</strong></p>
+<% @category.services.each do |service| %>
+  <p><%= link_to service.name, service_path(service) %></p>
+<% end %>
+
+
+<%= link_to 'Edit', edit_category_path(@category) %> |
+<%= link_to 'Back', categories_path %>

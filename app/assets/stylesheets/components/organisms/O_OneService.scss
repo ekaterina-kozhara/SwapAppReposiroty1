@@ -1,0 +1,19 @@
+.O_OneService {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 70px;
+
+  .M_OneServiceDescription {
+    margin-right: 50px;
+
+    .A_P2 a {
+      color: #D9A4FC;
+    }
+  }
+
+  .A_ServiceDescriptionInOne {
+    margin-top: 15px;
+  }
+
+}

@@ -1,0 +1,37 @@
+<div class="P_MyService">
+
+  <p id="notice"><%= notice %></p>
+
+
+  <%= link_to @service.user do%>
+    <div class="M_MyProfileInfo">
+      <%= image_tag(@service.user.image, style:'width:80px; height:80px; border-radius: 50px;') %>
+      <div class="A_H3">
+        <%= link_to @service.user.name, user_path(@service.user) %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="O_OneService">
+    <div class="M_OneServiceDescription">
+        <div class="A_H2">
+          <%= @service.name %>
+        </div>
+        <p class="A_P2"> Категории:
+          <%= link_to @service.category.name, category_path(@service.category) %>
+        </p>
+        <p class="A_ServiceDescriptionInOne">
+        <%= @service.description %>
+        </p>
+        <div class="M_ActionServiceLink">
+          <%= link_to 'Редактировать', edit_service_path(@service), class: "A_Button" %>
+          <%#= link_to 'Мои услуги', services_path %>
+        </div>
+    </div>
+
+    <div>
+      <%= image_tag(@service.image, style:'width:400px; height:211px; border-radius: 4px;') if @service.image.attached? %>
+    </div>
+  </div>
+
+</div>

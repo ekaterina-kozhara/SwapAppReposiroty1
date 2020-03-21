@@ -1,0 +1,68 @@
+<div class="P_UserServives">
+  <p id="notice"><%= notice %></p>
+  <div class="M_MyProfileInfo">
+    <%= image_tag(@user.image, style:'width:80px; height:80px; border-radius: 50px;') if @user.image.attached? %>
+    <div class="A_H3">
+      <%= @user.name %>
+    </div>
+    <div class="A_P2">
+      <%#= @user.description %>
+      <%= link_to @user.city.name, city_path(@user.city) %>
+    </div>
+  </div>
+
+  <!-- <p>
+    <strong>Avatar link:</strong>
+    <#%= @user.avatar_link %>
+  </p> -->
+
+  <!-- <p>
+    <strong>Telegram:</strong>
+    <#%= @user.telegram %>
+  </p> -->
+
+  <!-- <p>
+    <strong>WhatsApp:</strong>
+    <#%= @user.whats_app %>
+  </p> -->
+
+  <!-- <p>
+    <strong>Telephone:</strong>
+    <#%= @user.telephone %>
+  </p> -->
+
+  <!-- <p>
+    <strong>Instagram:</strong>
+    <#%= @user.instagram %>
+  </p> -->
+  <div class="O_AllServicesOfUser">
+    <% @user.services.each do |service| %>
+    <div class="M_ServiceCard">
+      <div class="">
+        <h2 class="A_H2">
+          <%= link_to service.name, service_path(service) %>
+        </h2>
+      </div>
+      <div class="">
+        <%= image_tag(service.image, style:'width:270px; height:142px; border-radius: 4px; margin-top: 15px;') %>
+      </div>
+      <div class="M_ServiceSettings">
+        <%= link_to 'Редактировать', edit_service_path(@user), class: "A_Button" %>
+        <div class="M_HideDestroy">
+          <%= link_to 'Скрыть' %>
+          <%= link_to 'Удалить', service, method: :delete, data: { confirm: 'Ты точно хочешь удалить это предложение?' } %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+  <!-- <p>
+    <strong>City</strong>
+    <#%= link_to @user.city.name, city_path(@user.city) %>
+  </p> -->
+
+
+  <%#= link_to 'Edit', edit_user_path(@user) %>
+  <%#= link_to 'Back', users_path %>
+</div>

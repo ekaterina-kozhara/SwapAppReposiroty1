@@ -1,0 +1,17 @@
+* {
+  transition: 0.1s ease-out 0.1s;
+}
+
+.P_MyService {
+  padding: 50px 40px;
+  // padding: 120px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .A_H1 {
+    margin-left: 120px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+}

@@ -1,0 +1,16 @@
+.O_AllServicesOfUser {
+  width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+
+  .M_ServiceCard  {
+    margin-top: 40px;
+    width: 270px;
+  }
+  // .M_HideDestroy {
+  //   width: 270px;
+  // }
+
+}

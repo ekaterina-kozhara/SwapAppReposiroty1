@@ -1,0 +1,63 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <!-- <div class="field">
+    <#%= form.label :avatar_link %>
+    <#%= form.text_field :avatar_link %>
+  </div> -->
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+
+
+<div class="field">
+  <%= form.label :city_id, 'City' %>
+  <%= form.collection_select :city_id, City.all, :id, :name, prompt: true %>
+</div>
+
+  <div class="field">
+    <%= form.label :telegram %>
+    <%= form.text_field :telegram %>
+  </div>
+
+  <div class="field">
+    <%= form.label :whats_app %>
+    <%= form.text_field :whats_app %>
+  </div>
+
+  <div class="field">
+    <%= form.label :telephone %>
+    <%= form.text_field :telephone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :instagram %>
+    <%= form.text_field :instagram %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

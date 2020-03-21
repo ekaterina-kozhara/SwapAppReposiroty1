@@ -1,0 +1,13 @@
+.O_AllServices {
+  width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+
+  .M_ServiceCard  {
+    margin-top: 40px;
+  }
+
+
+}

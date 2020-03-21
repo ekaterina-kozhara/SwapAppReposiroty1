@@ -1,0 +1,16 @@
+.M_CategoryList {
+  margin: 0 auto;
+  width: 1000px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  .Q_RShevron {
+  margin-left: 40px;
+  margin-top: 3px;
+  }
+
+  .Q_LShevron {
+    margin-top: 3px;
+  }
+}

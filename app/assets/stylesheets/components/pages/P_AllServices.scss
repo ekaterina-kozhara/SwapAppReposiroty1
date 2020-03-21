@@ -1,0 +1,32 @@
+* {
+  transition: 0.1s ease-out 0.1s;
+}
+
+.P_AllServices {
+  padding: 50px 40px;
+  // padding: 120px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .A_H1 {
+    margin-left: 120px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #4D4D4D;
+    margin-left: 20px;
+
+    &:hover {
+      color: #FFDF4E;
+    }
+  }
+
+  .M_CategoryList {
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+}

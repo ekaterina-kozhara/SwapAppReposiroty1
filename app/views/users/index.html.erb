@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <!-- <th>Name</th>
+      <th>Description</th>
+      <th>Avatar link</th>
+      <th>City</th>
+      <th>Telegram</th>
+      <th>WhatsApp</th>
+      <th>Telephone</th>
+      <th>Instagram</th> -->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.description %></td>
+
+        <td>
+          <%= image_tag(user.image, style:'width:40px; height:40px; border-radius: 50px;') %>
+        </td>
+
+        <td><%= user.telegram %></td>
+        <td><%= user.whats_app %></td>
+        <td><%= user.telephone %></td>
+        <td><%= user.instagram %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_path %>
