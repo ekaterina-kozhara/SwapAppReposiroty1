@@ -1,4 +1,4 @@
-.O_AllServices {
+.O_AllServicesInCategory {
   width: 1000px;
   margin: 0 auto;
   display: grid;
@@ -7,5 +7,16 @@
 
   .M_ServiceCard  {
     margin-top: 40px;
+    width: 231px;
   }
+
+  .A_H2 a {
+    margin-left: 0px;
+
+    &:hover {
+      color: #4D4D4D;    
+    }
+
+  }
+
 }
