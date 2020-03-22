@@ -1,6 +1,11 @@
-<h1>Editing Service</h1>
+<div class="O_Form">
 
-<%= render 'form', service: @service %>
+  <h2 class="A_H2">Редактирование услуги</h2>
 
-<%= link_to 'Посмотреть предложение', @service %> |
-<%= link_to 'Венруться обратно', services_path %>
+  <%= render 'form', service: @service %>
+
+  <div class="A_P1">
+    <%= link_to 'Посмотреть услугу', @service %> |
+    <%= link_to 'Венруться обратно', services_path %>
+  </div>
+</div>

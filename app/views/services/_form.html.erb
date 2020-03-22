@@ -1,3 +1,4 @@
+<div class="O_Form">
 <%= form_with(model: service, local: true) do |form| %>
   <% if service.errors.any? %>
     <div id="error_explanation">
@@ -11,32 +12,34 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
+    <div class="field">
+      <%= form.label :name, "Введи название услуги" %>
+      <%= form.text_field :name %>
+    </div>
 
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
-  </div>
+    <div class="field">
+      <%= form.label :description , "Опиши услугу" %>
+      <%= form.text_area :description %>
+    </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
-  </div>
+    <div class="field">
+      <%= form.label :image , "Добавь изображения к услуге" %>
+      <%= form.file_field :image %>
+    </div>
 
-  <div class="field">
-    <%= form.label :category_id, 'Выберите категорию вашей услуги' %>
-    <%= form.collection_select :category_id, Category.all, :id, :name, prompt: true %>
-  </div>
+    <div class="field">
+      <%= form.label :user_id, "Пользователь" %>
+      <%= form.number_field :user_id %>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
+    <div class="field">
+      <%= form.label :category_id, 'Выбери категорию услуги' %>
+      <%= form.collection_select :category_id, Category.all, :id, :name, prompt: true %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+    <% end %>
   </div>
-<% end %>

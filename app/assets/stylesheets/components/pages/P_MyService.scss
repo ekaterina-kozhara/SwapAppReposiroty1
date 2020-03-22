@@ -3,7 +3,7 @@
 }
 
 .P_MyService {
-  padding: 50px 40px;
+  padding: 120px 0px;
   // padding: 120px 100px;
   display: flex;
   flex-direction: column;
@@ -14,4 +14,10 @@
     margin-top: 30px;
     margin-bottom: 10px;
   }
+  
+  a {
+    text-decoration: none;
+    color: #4D4D4D;
+  }
+
 }

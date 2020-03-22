@@ -9,6 +9,10 @@
       <div class="A_H3">
         <%= link_to @service.user.name, user_path(@service.user) %>
       </div>
+      <div class="A_P2">
+        <%#= @user.description %>
+        <%= link_to @service.user.city.name, city_path(@service.user.city) %>
+      </div>
     </div>
   <% end %>
 
