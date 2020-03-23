@@ -42,7 +42,7 @@ class ServicesController < ApplicationController
   def update
     respond_to do |format|
       if @service.update(service_params)
-        format.html { redirect_to @service, notice: 'Ваше предложение обновлено'}
+        format.html { redirect_to @service, notice: 'Твоё предложение обновлено'}
         format.json { render :show, status: :ok, location: @service }
       else
         format.html { render :edit }
