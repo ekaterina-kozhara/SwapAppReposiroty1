@@ -26,15 +26,14 @@
   </thead>
 
   <tbody>
+
     <% @users.each do |user| %>
       <tr>
         <td><%= user.name %></td>
         <td><%= user.description %></td>
-
         <td>
-          <%= image_tag(user.image, style:'width:40px; height:40px; border-radius: 50px;') %>
+          <%= image_tag(user.image, style:'width:40px; height:40px; border-radius: 50px;') if user.image.attached?%>
         </td>
-
         <td><%= user.telegram %></td>
         <td><%= user.whats_app %></td>
         <td><%= user.telephone %></td>

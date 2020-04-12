@@ -44,7 +44,7 @@
         </h2>
       </div>
       <div class="">
-        <%= image_tag(service.image, style:'width:270px; height:142px; border-radius: 4px; margin-top: 15px;') %>
+        <%= image_tag(service.image, style:'width:270px; height:142px; border-radius: 4px; margin-top: 15px;') if service.image.attached? %>
       </div>
       <div class="M_ServiceSettings">
         <%= link_to 'Редактировать', edit_service_path(@user), class: "A_Button" %>

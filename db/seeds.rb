@@ -1,6 +1,8 @@
 @users = [
   {
     name: "Песя",
+    email: "user1@test.com",
+    password: "testtest",
     description: "Хороший песя",
     avatar_link: "фотка",
     telegram: "897277288",
@@ -10,6 +12,8 @@
   } ,
   {
     name: "Муся",
+    email: "user2@test.com",
+    password: "testtest",
     description: "Хороший муся",
     avatar_link: "фотка",
     telegram: "8972772828",
@@ -19,6 +23,8 @@
   },
   {
     name: "Ванек",
+    email: "user3@test.com",
+    password: "testtest",
     description: "Хороший песя",
     avatar_link: "фотка",
     telegram: "888972772828",
@@ -109,6 +115,8 @@ def create_users(users)
   users.each do |user|
     new_user = User.new
     new_user.name = user[:name]
+    new_user.email = user[:email]
+    new_user.password = user[:password]
     new_user.description = user[:description]
     new_user.telegram = user[:telegram]
     new_user.instagram = user[:instagram]

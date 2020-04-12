@@ -5,7 +5,7 @@
 
   <%= link_to @service.user do%>
     <div class="M_MyProfileInfo">
-      <%= image_tag(@service.user.image, style:'width:80px; height:80px; border-radius: 50px;') %>
+      <%= image_tag(@service.user.image, style:'width:80px; height:80px; border-radius: 50px;') if @service.user.image.attached? %>
       <div class="A_H3">
         <%= link_to @service.user.name, user_path(@service.user) %>
       </div>
