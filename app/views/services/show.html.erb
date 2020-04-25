@@ -2,10 +2,9 @@
 
   <p id="notice"><%= notice %></p>
 
-
   <%= link_to @service.user do%>
     <div class="M_MyProfileInfo">
-      <%= image_tag(@service.user.image, style:'width:80px; height:80px; border-radius: 50px;') if @service.user.image.attached? %>
+      <%#= image_tag(@service.user.image, style:'width:80px; height:80px; border-radius: 50px;') if @service.user.image.attached? %>
       <div class="A_H3">
         <%= link_to @service.user.name, user_path(@service.user) %>
       </div>
@@ -29,13 +28,21 @@
         </p>
         <div class="M_ActionServiceLink">
           <%= link_to 'Редактировать', edit_service_path(@service), class: "A_Button" %>
+          <%= link_to 'Добавить новое фото', new_service_image_path(@service), class: "A_Button" %>
           <%#= link_to 'Мои услуги', services_path %>
         </div>
     </div>
 
-    <div>
-      <%= image_tag(@service.image, style:'width:400px; height:211px; border-radius: 4px;') if @service.image.attached? %>
+    <%#= link_to 'Add to favourites', services_add_to_favourite_path(service_id: @service.id), method: :post %>
+
+    <% @service.service_images.each do |service_image| %>
+      <% if service_image.image.present? %>
+      <div>
+        <%= image_tag service_image.image.card.url, class: "la"%>
+        <%#= image_tag service_image.image.thumb.url %>
+      </div>
+      <% end %>
+    <% end %>
     </div>
-  </div>
 
 </div>

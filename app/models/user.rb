@@ -5,5 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :services
   has_one_attached :image
-  belongs_to :city 
+  belongs_to :city
+
+  has_many :favourites
+  has_many :favourite_services, through: :favourites, source: 'service'
 end

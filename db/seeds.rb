@@ -131,6 +131,7 @@ end
 def create_services(services)
   services.each do |service|
     new_service = Service.new
+    new_service.image = service[image: upload_random_cover]
     new_service.name = service[:name]
     new_service.description = service[:description]
     new_service.user_id = User.all.sample.id
@@ -138,6 +139,12 @@ def create_services(services)
     new_service.save!
 
   end
+end
+
+def upload_random_cover
+  uploader = ServiceCoverUploader.new(Service.new, :image)
+  uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'public/autoupload', '*')).sample))
+  uploader
 end
 
 seed

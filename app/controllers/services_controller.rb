@@ -1,10 +1,12 @@
 class ServicesController < ApplicationController
   before_action :set_service, only: [:show, :edit, :update, :destroy]
 
+
   # GET /services
   # GET /services.json
   def index
     @services = Service.all
+    @categories = Category.all
   end
 
   # GET /services/1
@@ -35,6 +37,11 @@ class ServicesController < ApplicationController
         format.json { render json: @service.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def add_to_favourite
+    Favourite.create(user_id: 1, service_id: params[:service_id])
+    redirect_to service_path(params[:service_id]), notice: 'Added to favourites'
   end
 
   # PATCH/PUT /services/1
@@ -69,6 +76,6 @@ class ServicesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def service_params
-      params.require(:service).permit(:name, :description, :user_id, :category_id, :image)
+      params.require(:service).permit(:name, :description, :user_id, :category_id, :image, :cover)
     end
 end

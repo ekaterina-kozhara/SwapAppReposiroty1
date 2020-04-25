@@ -5,8 +5,8 @@
     <div class="M_CategoryList">
           <div class="Q_LShevron"></div>
           <div class="A_CategoryList">
-            <% @services.each do |service| %>
-              <%= link_to service.category.name, category_path(service.category) %>
+            <% @categories.each do |category| %>
+              <%= link_to category.name, category_path(category) %>
             <% end %>
           </div>
           <div class="Q_RShevron"></div>
@@ -16,9 +16,6 @@
 
     <th colspan="3"></th>
     <div class="O_AllServices">
-
-
-
         <% @services.each do |service| %>
         <%= link_to service do%>
         <div class="Please">
@@ -26,31 +23,47 @@
               <div class="">
                 <h2 class="A_H2"><%= service.name %></h2>
               </div>
+              <% service.service_images.each do |service_image| %>
+                <% if service_image.image.present? %>
+                <div>
+                  <%= image_tag service_image.image.card.url, class: "la"%>
+                  <%#= image_tag service_image.image.thumb.url %>
+                </div>
+                <% end %>
+              <% end %>
               <!-- <div class="">
                 <p class="A_P1"><#%= service.description %></p>
               </div> -->
-              <div class="">
-                  <%= image_tag(service.image, style:'width:231px; height:123px; border-radius: 4px; margin-top: 15px;') if service.image.attached? %>
-              </div>
+              <!-- <div class="">
+                  <%#= image_tag(service.image, style:'width:231px; height:123px; border-radius: 4px; margin-top: 15px;') if service.image.attached? %>
+              </div> -->
               <div class="A_ProfileInCard">
-                  <%= image_tag(service.user.image, style:'width:32px; height:32px; border-radius: 50px;') if service.user.image.attached? %>
                   <div class="A_P2">
                     <%= service.user.name %>
                   </div>
               </div>
+
+              <div class="">
+                <% if service.favourites.where(user_id: current_user.id).any? %>
+                <%= link_to services_add_to_favourite_path(service_id: service.id), method: :post do %>
+                    <div class=""><p>yes</p></div>
+                <% end %>
+                <% else %>
+                  <%= link_to services_add_to_favourite_path(service_id: service.id), method: :post do %>
+                    <div class=""><p>no</p></div>
+                  <% end %>
+                <% end %>
+              </div>
+
+
+
             </div>
           </div>
-
             <!-- закомментила шоу едит дестрой временно-->
             <!-- <td><#%= link_to 'Edit', edit_service_path(service) %></td> -->
             <!-- <td><#%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
         <% end %>
         <% end %>
-
-
-
-    <br>
-
     <%#= link_to 'New Service', new_service_path %>
   </div>
 </div>

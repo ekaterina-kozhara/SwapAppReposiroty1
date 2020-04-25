@@ -13,10 +13,10 @@
         <h2 class="A_H2"><%= service.name %></h2>
       </div>
       <div class="">
-        <%= image_tag(service.image, style:'width:231px; height:123px; border-radius: 4px; margin-top: 15px;') if service.image.attached? %>
+        <%#= image_tag(service.image, style:'width:231px; height:123px; border-radius: 4px; margin-top: 15px;') if service.image.attached? %>
       </div>
       <div class="A_ProfileInCard">
-          <%= image_tag(service.user.image, style:'width:32px; height:32px; border-radius: 50px;') if service.user.image.attached? %>
+          <%#= image_tag(service.user.image, style:'width:32px; height:32px; border-radius: 50px;') if service.user.image.attached? %>
           <div class="A_P2">
             <%= service.user.name %>
           </div>
